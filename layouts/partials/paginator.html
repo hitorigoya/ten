@@ -1,0 +1,26 @@
+<div class="entry_list_paginator__">
+{{ if .Paginator.HasPrev }}
+    <a class="paginator_prev__" href="{{ .Paginator.Prev.URL }}">
+        <!-- <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 16L0 8L8 0L9.05 1.05L2.85 7.25H16V8.75H2.85L9.05 14.95L8 16Z" fill="currentColor" />
+        </svg> -->
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 15L0 7.5L7.5 0L8.48438 0.984375L2.67187 6.79688H15V8.20312H2.67187L8.48438 14.0156L7.5 15Z" fill="currentColor"/>
+        </svg>            
+    </a>
+{{ else }}
+    <div class="paginator_prev_empty__"></div>
+{{ end }}
+{{ if .Paginator.HasNext }}
+    <a class="paginator_next__" href="{{ .Paginator.Next.URL }}">
+        <!-- <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 16L6.95 14.925L13.125 8.75H0V7.25H13.125L6.95 1.075L8 0L16 8L8 16Z" fill="currentColor" />
+        </svg> -->
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 15L6.51562 13.9922L12.3047 8.20312H0V6.79688H12.3047L6.51562 1.00781L7.5 0L15 7.5L7.5 15Z" fill="currentColor"/>
+        </svg>            
+    </a>
+{{ else }}
+    <div class="paginator_next_empty__"></div>
+{{ end }}
+</div>

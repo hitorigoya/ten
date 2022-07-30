@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{ with resources.Get "css/syntax.css" }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+
+    {{ if .Site.Params.disableNotoSansJP }}
+    {{ else }}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    {{ end }}
+
+
+    {{ if eq .Site.Params.themeColor "dark" }}
+        {{ with resources.Get "css/dark.css" }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ end }}
+    {{ else if eq .Site.Params.themeColor "light" }}
+        {{ with resources.Get "css/light.css" }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ end }}
+    {{ else }}
+        {{ with resources.Get "css/light.css" }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ end }}
+    {{ end }}
+
+    {{ with resources.Get "css/main.css" }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+
+    {{ with .Site.Params.favicon }}
+        <link rel="shortcut icon" href="{{ . | relURL }}">
+    {{ end }}
+
+    {{ range .AlternativeOutputFormats -}}
+        <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+    {{ end -}}
+
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+
+    {{ if and .Site.GoogleAnalytics hugo.IsProduction }}
+        {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
+
+    {{ if .IsHome }}
+        <title>{{ .Site.Title }}</title>
+    {{ else }}
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ end }}
+
+</head>

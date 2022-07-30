@@ -1,0 +1,23 @@
+{{ if .Site.Params.socialIcons }}
+    {{- partial "social-icons.html" . -}}
+{{ end }}
+
+<div class="footer_menu_copyright_container__">
+    {{ if .Site.Copyright }}
+        <div class="footer_copyright__">{{ .Site.Copyright }}</div>
+    {{ else }}
+        <div class="footer_copyright__">© {{ now.Year }} {{ .Site.Title }}</div>
+    {{ end }}
+
+    {{ with .Site.Menus.footer }}
+    <nav>
+        <ul class="footer_menu__">
+            {{ range . }}
+            <li>
+                <a href="{{- .URL -}}">{{ .Pre }}{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+    {{ end }}
+</div>

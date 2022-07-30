@@ -1,0 +1,17 @@
+{{ if .Site.Params.logo }}
+    <a class="header_site_logo_desktop__" href="/"><img src="{{ .Site.Params.logo | relURL }}"></a>
+{{ else }}
+    <a class="header_site_title_desktop__" href="/">{{- .Site.Title -}}</a>
+{{ end }}
+
+{{ if .Site.Menus.main }}
+<nav class="header_nav_desktop__">
+    <ul class="header_menu_desktop__">
+        {{ range .Site.Menus.main }}
+        <li>
+            <a href="{{- .URL -}}">{{ .Pre }}{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>
+{{ end }}

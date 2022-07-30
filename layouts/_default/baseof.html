@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- <html lang="{{ .Site.Language.Lang }}"> -->
+<html>
+{{- partial "head.html" . -}}
+
+<body>
+    <div class="body_container__">
+        <header>
+            <div class="header_container__">
+                <div class="header_container_mobile__">
+                    {{- partial "header-mobile.html" . -}}
+                </div>
+                <div class="header_container_desktop__">
+                    {{- partial "header-desktop.html" . -}}
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main_container__">
+                {{ block "main" . }}{{ end }}
+            </div>
+        </main>
+        <footer>
+            <div class="footer_container__">
+                {{- partial "footer.html" . -}}
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

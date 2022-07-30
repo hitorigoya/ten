@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<ul class="entry_list__">
+    {{ range .Paginator.Pages }}
+    <li class="entry_list_item__">
+        <div class="entry_list_date_tags_container__">
+            <div class="entry_list_date__">{{ .Date | time.Format ":date_long" }}</div>
+            {{ if .Params.tags }}
+                /
+                <ul class="entry_list_tags__">
+                    {{ range .Params.tags }}
+                        {{ with $.Site.GetPage (printf "/tags/%s" .) }}
+                            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                        {{ end }}
+                    {{ end }}
+
+                </ul>
+            {{ end }}
+        </div>
+        <h2 class="entry_list_heading__">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        <a href="{{ .RelPermalink }}" class="entry_list_summary__">{{ .Summary }}...</a>
+    </li>
+    {{ end }}
+</ul>
+
+{{- partial "paginator.html" . -}}
+
+{{ end }}

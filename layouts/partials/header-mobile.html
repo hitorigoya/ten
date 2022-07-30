@@ -1,0 +1,36 @@
+{{ if .Site.Params.logo }}
+    <a class="header_site_logo_mobile__" href="/"><img src="{{ .Site.Params.logo | relURL }}"></a>
+{{ else }}
+    <a class="header_site_title_mobile__" href="/">{{- .Site.Title -}}</a>
+{{ end }}
+
+{{ if .Site.Menus.main }}
+<!-- メニュートグル checkbox -->
+<input type="checkbox" id="header_menu_toggle_mobile__">
+<!-- メニューを開く label -->
+<label for="header_menu_toggle_mobile__" class="header_menu_open_mobile__">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+    </svg>
+</label>
+<!-- メニューを閉じる label -->
+<label for="header_menu_toggle_mobile__" class="header_menu_close_mobile__"></label>
+
+<nav class="header_nav_mobile__">
+    <div class="header_nav_logo_title_container_mobile__">
+        {{ if .Site.Params.logo }}
+            <a class="header_site_logo_mobile__" href="/"><img src="{{ .Site.Params.logo | relURL }}"></a>
+        {{ else }}
+            <a class="header_site_title_mobile__" href="/">{{- .Site.Title -}}</a>
+        {{ end }}
+    </div>
+    <ul class="header_menu_mobile__">
+        {{ range .Site.Menus.main }}
+        <li>
+            <a href="{{- .URL -}}">{{ .Pre }}{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>
+{{ end }}
