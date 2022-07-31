@@ -23,6 +23,12 @@
         <h1 class="single_title__">{{ .Title }}</h1>
     {{ end }}
 
+    {{ if .Param "toc" }}
+        {{ with resources.Get "js/toc.js" }}
+            <script src="{{ .RelPermalink }}"></script>
+        {{ end }}
+    {{ end }}
+
     <div class="single_content__">{{ .Content }}</div>
 </article>
 
