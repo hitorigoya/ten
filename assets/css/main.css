@@ -134,6 +134,26 @@ video {
     height: auto;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+th {
+    text-align: start;
+    padding: 4px 16px;
+    border: 1px solid var(--border-color);
+}
+
+td {
+    padding: 4px 16px;
+    border: 1px solid var(--border-color);
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: var(--bg-color-secondary);
+}
+
+
 /* スクロールバー */
 @media (min-width:768px) {
     ::-webkit-scrollbar {
