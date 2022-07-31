@@ -1,6 +1,6 @@
 # 天 Hugo theme
 
-Blog 用の Hugo テーマ
+Blog 用のシンプルな Hugo テーマ
 
 <br/>
 
@@ -20,6 +20,11 @@ Blog 用の Hugo テーマ
 ```
 git submodule add https://github.com/hitorigoya/ten.git themes/ten
 git submodule update --init --recursive
+```
+
+config.yaml
+```yaml
+theme: "ten"
 ```
 
 <br/>
@@ -151,4 +156,47 @@ params:
 ### Google Analytics
 ```yaml
 googleAnalytics: G-XXXXXXX
+```
+
+<br/>
+
+### config.yaml の例
+```yaml
+baseURL: "https://example.com/"
+title: "myBlog"
+theme: "ten"
+paginate: 8
+hasCJKLanguage: true
+summaryLength: 150
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 5
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 10
+  footer:
+    - identifier: privacy
+      name: プライバシー
+      url: /privacy/
+      weight: 5
+    - identifier: contact
+      name: お問い合わせ
+      url: /contact/
+      weight: 10
+params:
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/"
+    - name: "twitter"
+      url: "https://twitter.com"
+    - name: "youtube"
+      url: "https://youtube.com"
+markup:
+  highlight:
+    style: dracula
 ```
