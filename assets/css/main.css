@@ -36,6 +36,10 @@ h6 {
     margin: 16px 0;
 }
 
+h1 {
+    margin-top: 32px;
+}
+
 h2 {
     margin-top: 32px;
 }
@@ -359,29 +363,22 @@ tbody tr:nth-of-type(even) {
 
 
 .entry_list_item__ {
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
 }
 
 .entry_list_item__:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
     margin-bottom: 0;
 }
 
 @media (min-width:768px) {
     .entry_list_item__ {
-        padding-bottom: 32px;
-        margin-bottom: 32px;
+        margin-bottom: 64px;
+    }
+
+    .entry_list_item__:last-of-type {
+        margin-bottom: 0;
     }
 }
-
-/* .entry_list_item__:last-of-type {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-} */
 
 /* 日付＋カテゴリー */
 .entry_list_date_tags_container__ {
@@ -478,12 +475,12 @@ tbody tr:nth-of-type(even) {
 .entry_list_paginator__ {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 48px;
 }
 
 @media (min-width:768px) {
     .entry_list_paginator__ {
-        margin-top: 56px;
+        margin-top: 64px;
     }
 }
 
