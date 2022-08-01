@@ -4,15 +4,26 @@ Blog 用のシンプルな Hugo テーマ
 
 <br/>
 
-| 機能                | 実装 |
-| :------------------ | ---: |
-| ソーシャルアイコン  |    ✔ |
-| Google Analytics v4 |    ✔ |
-| Open Graph          |    ✔ |
-| Twitter Cards       |    ✔ |
-| サムネイル          |    ❌ |
-| コメント            |    ❌ |
-| 検索                |    ❌ |
+## Demo
+
+[https://ten-demo.pages.dev/](https://ten-demo.pages.dev/)
+
+<br/>
+
+## Features
+
+| 機能                | 実装  |
+| :------------------ | :---: |
+| 目次                |   ✔   |
+| Open Graph          |   ✔   |
+| Twitter Cards       |   ✔   |
+| Google Analytics v4 |   ✔   |
+| RSSフィード         |   ✔   |
+| ソーシャルアイコン  |   ✔   |
+| 多言語              |   ❌   |
+| サムネイル          |   ❌   |
+| コメント            |   ❌   |
+| 検索                |   ❌   |
 
 <br/>
 
@@ -99,6 +110,7 @@ params:
 <br/>
 
 ### ソーシャルアイコン
+以下の6つのアイコンをサポートしています。
 ```yaml
 params:
   socialIcons:
@@ -168,6 +180,7 @@ theme: "ten"
 paginate: 8
 hasCJKLanguage: true
 summaryLength: 150
+enableRobotsTXT: true
 
 menu:
   main:
@@ -199,4 +212,18 @@ params:
 markup:
   highlight:
     style: dracula
+```
+
+<br/>
+
+## 目次機能
+フロントマターに `toc: true` を追加すると目次が表示されます。
+- H2タグのみを一覧表示します。
+- 最初のH2タグの直前に表示されます。
+
+```md
+title: "First Post"
+date: 2022-07-31T12:34:56+09:00
+draft: false
+toc: true
 ```

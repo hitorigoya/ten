@@ -21,7 +21,8 @@
         <h2 class="entry_list_heading__">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
-        <a href="{{ .RelPermalink }}" class="entry_list_summary__">{{ .Summary }}...</a>
+        
+        <a href="{{ .RelPermalink }}" class="entry_list_summary__">{{ .Summary | plainify }}{{ if .Truncated }}...{{ end }}</a>
     </li>
     {{ end }}
 </ul>

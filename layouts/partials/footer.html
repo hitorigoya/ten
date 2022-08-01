@@ -4,7 +4,7 @@
 
 <div class="footer_menu_copyright_container__">
     {{ if .Site.Copyright }}
-        <div class="footer_copyright__">{{ .Site.Copyright }}</div>
+        <div class="footer_copyright__">{{ .Site.Copyright | safeHTML }}</div>
     {{ else }}
         <div class="footer_copyright__">© {{ now.Year }} {{ .Site.Title }}</div>
     {{ end }}
