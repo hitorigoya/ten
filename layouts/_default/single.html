@@ -32,21 +32,25 @@
     <div class="single_content__">{{ .Content }}</div>
 </article>
 
-<div class="single_tail_nav__">
-    <a href="/" class="single_home__">
-        <div>
-            <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 16V5.33333L7.15556 0L14.2222 5.33333V16H9.02222V9.66667H5.17778V16H0ZM1.33333 14.6667H3.84444V8.33333H10.3556V14.6667H12.8889V6L7.15556 1.66667L1.33333 6V14.6667Z" fill="currentColor"/>
-            </svg>
-        </div>Home</a>
-    <a href="#" class="single_top__">
-        <div>
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.79688 15V2.67187L0.984375 8.48438L0 7.5L7.5 0L15 7.5L14.0156 8.48438L8.20312 2.67187V15H6.79688Z" fill="currentColor"/>
+{{ if .Param "disableNav" }}
+{{ else }}
+    <div class="single_tail_nav__">
+        <a href="/" class="single_home__">
+            <div>
+                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 16V5.33333L7.15556 0L14.2222 5.33333V16H9.02222V9.66667H5.17778V16H0ZM1.33333 14.6667H3.84444V8.33333H10.3556V14.6667H12.8889V6L7.15556 1.66667L1.33333 6V14.6667Z" fill="currentColor"/>
                 </svg>
-                                    
-        </div>Top</a>
-</div>
+            </div>Home
+        </a>
+        <a href="#" class="single_top__">
+            <div>
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.79688 15V2.67187L0.984375 8.48438L0 7.5L7.5 0L15 7.5L14.0156 8.48438L8.20312 2.67187V15H6.79688Z" fill="currentColor"/>
+                </svg>                                
+            </div>Top
+        </a>
+    </div>
+{{ end }}
 
 <!-- {{- partial "related.html" . -}} -->
 

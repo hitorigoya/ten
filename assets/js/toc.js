@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const toc = document.createElement('ul')
     toc.classList.add('single_toc__')
 
-    const tocTitle = document.createElement('div')
-    tocTitle.textContent = '目次'
-    tocTitle.classList.add('single_toc_title__')
-    toc.append(tocTitle)
-
     const headings = container.querySelectorAll('h2')
     headings.forEach((heading, index) => {
         const anchor = document.createElement('a')

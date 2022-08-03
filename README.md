@@ -6,7 +6,7 @@ Blog 用のシンプルな Hugo テーマ
 
 ## Demo
 
-[https://ten-demo.pages.dev/](https://ten-demo.pages.dev/)
+[https://ten-demo.pages.dev](https://ten-demo.pages.dev)
 
 <br/>
 
@@ -181,6 +181,7 @@ paginate: 8
 hasCJKLanguage: true
 summaryLength: 150
 enableRobotsTXT: true
+rssLimit: 10
 
 menu:
   main:
@@ -226,4 +227,15 @@ title: "First Post"
 date: 2022-07-31T12:34:56+09:00
 draft: false
 toc: true
+```
+
+
+## 記事のナビゲーションを非表示にする
+フロントマターに `disableNav: true` を追加すると記事の最後のナビゲーションを非表示にできます。
+
+```md
+title: "First Post"
+date: 2022-07-31T12:34:56+09:00
+draft: false
+disableNav: true
 ```

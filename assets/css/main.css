@@ -502,6 +502,7 @@ tbody tr:nth-of-type(even) {
 /*** single ***/
 .single_title__ {
     font-size: 22px;
+    text-align: center;
     margin-top: 0;
     margin-bottom: 24px;
 }
@@ -517,6 +518,7 @@ tbody tr:nth-of-type(even) {
 .single_date_tags_container__ {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     column-gap: 8px;
     row-gap: 4px;
     font-size: 12px;
