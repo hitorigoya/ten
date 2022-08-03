@@ -182,6 +182,7 @@ hasCJKLanguage: true
 summaryLength: 150
 enableRobotsTXT: true
 rssLimit: 10
+copyright: © 1997 John Doe
 
 menu:
   main:
@@ -238,4 +239,14 @@ title: "First Post"
 date: 2022-07-31T12:34:56+09:00
 draft: false
 disableNav: true
+```
+
+
+## 記事のタイトルを非表示にする
+フロントマターに `hideTitle: true` を追加すると記事のタイトルを非表示にできます。
+```md
+title: "First Post"
+date: 2022-07-31T12:34:56+09:00
+draft: false
+hideTitle: true
 ```

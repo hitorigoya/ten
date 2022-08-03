@@ -19,8 +19,11 @@
         </div>
     {{ end }}
 
-    {{ if .Title }}
-        <h1 class="single_title__">{{ .Title }}</h1>
+    {{ if .Param "hideTitle" }}
+    {{ else }}
+        {{ with .Title }}
+            <h1 class="single_title__">{{ . }}</h1>
+        {{ end }}
     {{ end }}
 
     {{ if .Param "toc" }}
